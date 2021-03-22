@@ -1,13 +1,7 @@
 <template>
   <v-app>
-    <v-app-bar fixed color="white" shrink-on-scroll>
-      <v-app-bar-nav-icon
-        v-if="$vuetify.breakpoint.mdAndDown"
-      ></v-app-bar-nav-icon>
-      <v-img src=""></v-img>
-    </v-app-bar>
+    <Header />
     <v-main>
-      <Home />
       <Home />
     </v-main>
     <v-footer>asdasdas </v-footer>
@@ -15,14 +9,15 @@
 </template>
 
 <script>
-import Home from "./views/Home";
+import Home from './views/Home'
+import Header from './components/Header'
 export default {
-  name: "App",
+  name: 'App',
 
-  components: { Home },
+  components: { Home, Header },
 
   data: () => ({
     //
   }),
-};
+}
 </script>
