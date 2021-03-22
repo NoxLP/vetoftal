@@ -16,8 +16,13 @@
           </v-col>
           <v-spacer></v-spacer>
           <v-col>
-            <v-tabs>
-              <v-tab v-for="(tab, idx) in tabs" :key="idx">{{ tab }}</v-tab>
+            <v-tabs active-class="active-tabs">
+              <v-tab
+                v-for="(tab, idx) in tabs"
+                :key="idx"
+                style="white-space: pre-line"
+                >{{ tab }}</v-tab
+              >
             </v-tabs>
           </v-col>
         </v-row>
@@ -32,7 +37,7 @@ export default {
     return {
       tabs: [
         'Quiénes somos',
-        'Enfermedades oculares y sus síntomas',
+        'Enfermedades oculares\ny sus síntomas',
         'Servicios',
       ],
     }
@@ -40,4 +45,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.active-tabs {
+  background-color: var(--v-secondaryTrans) !important;
+}
+</style>
