@@ -1,16 +1,17 @@
 <template>
   <div>
-    <v-app-bar fixed color="white" shrink-on-scroll app class="pa-0">
+    <v-app-bar dense fixed color="white" shrink-on-scroll app class="pa-0">
       <v-app-bar-nav-icon
+        fixed
+        class="ma-auto"
         v-if="$vuetify.breakpoint.smAndDown"
       ></v-app-bar-nav-icon>
       <v-img
         v-if="$vuetify.breakpoint.smAndDown"
         src="@/assets/images/LogoNewPeqWhite.png"
         contain
-        class="mr-7"
-        height="80"
-        width="150"
+        class="mt-2"
+        style="height: 80%"
       ></v-img>
       <v-container v-if="$vuetify.breakpoint.mdAndUp" full-height fluid>
         <v-row justify="start" align="center">
