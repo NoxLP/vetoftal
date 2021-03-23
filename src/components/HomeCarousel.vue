@@ -42,6 +42,7 @@
                             </v-card-text>
                             <v-card-actions class="pt-0">
                               <router-link
+                                style="text-decoration: none; color: inherit"
                                 type="button"
                                 class="btn mr-5"
                                 :to="{
