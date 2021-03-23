@@ -1,11 +1,7 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify/lib/framework'
 
-Vue.use(Vuetify, {
-  options: {
-    customProperties: true,
-  },
-})
+Vue.use(Vuetify)
 /*
 --main-body-bg-color: #ffebd6;
   --main-prim-color: #966dd0;

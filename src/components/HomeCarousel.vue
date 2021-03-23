@@ -1,5 +1,5 @@
 <template>
-  <v-container class="px-0 mt-10 mt-md-16" fluid>
+  <v-container class="px-0 mt-10 mt-md-16 mt-lg-10" fluid>
     <v-row class="px-0 px-md-16" justify="center">
       <v-col cols="12" md="10">
         <v-card rounded class="ma-0 pa-0" elevation="10">
@@ -7,6 +7,7 @@
             <v-row class="ma-0 pa-0" justify="center">
               <v-col class="ma-0 pa-0" align="center">
                 <v-carousel
+                  cycle
                   rounded
                   class="pa-0 ma-0"
                   delimiter-icon="mdi-minus"
