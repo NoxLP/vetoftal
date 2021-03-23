@@ -68,24 +68,24 @@
 </template>
 
 <script>
-import { TEXTS } from '../helpers/strings'
+import { TEXTS_CAROUSEL } from '../helpers/strings'
 export default {
   data: function () {
     return {
       items: [
         {
           src: require('@/assets/images/placeholder.png'),
-          text: TEXTS.carousel.who,
+          text: TEXTS_CAROUSEL.who,
           to: 'who',
         },
         {
           src: require('@/assets/images/carousel/carousel-diseases.jpg'),
-          text: TEXTS.carousel.diseases,
+          text: TEXTS_CAROUSEL.diseases,
           to: 'diseases',
         },
         {
           src: require('@/assets/images/carousel/pet-surgery-1-1241227-1279x1709.jpg'),
-          text: TEXTS.carousel.services,
+          text: TEXTS_CAROUSEL.services,
           to: 'services',
         },
       ],
