@@ -5,6 +5,7 @@
       fixed
       color="white"
       elevate-on-scroll
+      :shrink-on-scroll="$vuetify.breakpoint.mdAndDown"
       app
       src="@/assets/images/carousel/pet-surgery-1-1241227-1279x1709.jpg"
       class="pa-0 bar"
@@ -43,9 +44,9 @@
             />
           </v-col>
           <v-spacer></v-spacer>
-          <v-col cols="5" offset="5" align="end" class="pl-16">
+          <v-col cols="5" offset="4" align="end">
             <v-tabs
-              class="my-auto pl-16 rounded-lg"
+              class="my-auto rounded"
               active-class="active-tabs"
               color="primary"
               background-color="rgba(255,255,255,0.85)"
@@ -73,6 +74,7 @@ export default {
         'Quiénes somos',
         'Enfermedades oculares\ny sus síntomas',
         'Servicios',
+        'Contacto',
       ],
     }
   },

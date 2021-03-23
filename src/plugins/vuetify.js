@@ -17,7 +17,7 @@ export default new Vuetify({
         primary: '#966dd0',
         primaryTrans: '#966dd0',
         secondary: '#d1f5dc',
-        secondaryTrans: '#D9FFE3',
+        secondaryTrans: '#D9FFE3' /*D9FFE32a*/,
         accent: '#D1AE82',
         error: '#FF0000',
         success: '#00ff66',
