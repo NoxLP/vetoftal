@@ -37,4 +37,14 @@ const TEXTS_HOME = [
   },
 ]
 
+const CURRICULUM = [
+  'Patricia Ramírez Perdomo',
+  'Licenciada en Veterinaria ULPGC',
+  'Postgrado en Oftalmología Veterinaria UAB',
+  'Experta universitaria en Farmacología Ocular UCM',
+  'Proceso de acreditación Oft-AVEPA',
+  'Más de 10 años de experiencia en Oftalmología Veterinaria',
+  'Autora y coautora de múltiples poster y comunicaciones en congresos nacionales e intenacionales',
+]
+
 module.exports = { TEXTS_CAROUSEL, TEXTS_HOME }
