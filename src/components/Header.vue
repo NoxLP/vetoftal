@@ -1,11 +1,11 @@
 <template>
   <div>
     <v-app-bar
-      height="100vh"
+      dense
       fixed
       color="white"
       elevate-on-scroll
-      :shrink-on-scroll="$vuetify.breakpoint.mdAndDown"
+      shrink-on-scroll
       app
       src="@/assets/images/carousel/pet-surgery-1-1241227-1279x1709.jpg"
       class="pa-0 bar"
@@ -22,45 +22,28 @@
         v-if="$vuetify.breakpoint.smAndDown"
       ></v-app-bar-nav-icon>
       <v-img
-        v-if="$vuetify.breakpoint.smAndDown"
         src="@/assets/images/LogoNewPeqWhite.png"
         contain
         class="mt-2"
-        style="height: 80%"
+        height="85%"
       ></v-img>
-      <v-container v-if="$vuetify.breakpoint.mdAndUp" full-height fluid>
-        <v-row justify="start" align="center" class="pb-lg-0 pt-lg-0">
-          <v-col cols="2" lg="1" align="start" class="ma-0 mt-2 mt-lg-0 pa-0">
-            <v-img
-              v-if="$vuetify.breakpoint.md"
-              src="@/assets/images/LogoNewPeqWhite.png"
-              contain
-              height="80%"
-            ></v-img>
-            <img
-              v-else
-              src="@/assets/images/LogoNewPeqWhite.png"
-              class="ma-0 pa-0"
-            />
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="5" offset="4" align="end">
-            <v-tabs
-              class="my-auto rounded"
-              active-class="active-tabs"
-              color="primary"
-              background-color="rgba(255,255,255,0.85)"
-            >
-              <v-tab
-                v-for="(tab, idx) in tabs"
-                :key="idx"
-                style="white-space: pre-line"
-                >{{ tab }}</v-tab
-              >
-            </v-tabs>
-          </v-col>
-        </v-row>
-      </v-container>
+      <v-spacer></v-spacer>
+      <v-tabs
+        class="mt-1 rounded"
+        active-class="active-tabs"
+        color="primary"
+        height="85%"
+        right
+      >
+        <!--background-color="rgba(255,255,255,0.85)"-->
+        <v-tab
+          v-for="(tab, idx) in tabs"
+          :key="idx"
+          style="white-space: pre-line"
+          class="mr-lg-10 text-body-2 text-lg-subtitle-1 font-weight-bold"
+          >{{ tab }}</v-tab
+        >
+      </v-tabs>
     </v-app-bar>
   </div>
 </template>
@@ -91,6 +74,12 @@ export default {
 }
 .active-tabs {
   background-color: var(--v-secondaryTrans) !important;
+}
+.theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active),
+.theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-icon,
+.theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-btn,
+.theme--light.v-tabs > .v-tabs-bar .v-tab--disabled {
+  color: black;
 }
 /*
 linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(217,255,227,0.5) 50%, rgba(150,109,208,0.5) 100%);

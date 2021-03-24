@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--DESKTOP-->
-    <v-container v-if="$vuetify.breakpoint.mdAndUp" class="mt-16" fluid>
+    <v-container v-if="$vuetify.breakpoint.mdAndUp" class="mt-16 mb-16" fluid>
       <v-row justify="center" align="center" class="px-10 pl-lg-5 pr-lg-5">
         <v-card color="#D1AE821a" height="auto" class="pl-0 rounded-lg">
           <v-card-text>
@@ -55,6 +55,7 @@
         </v-col>
       </v-row>
     </v-container>
+    <br />
   </div>
 </template>
 
