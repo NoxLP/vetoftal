@@ -1,6 +1,6 @@
 <template>
   <v-container fluid fill-height>
-    <v-row align="center" justify="center">
+    <v-row align="center" justify="center" class="mt-10 mt-lg-5">
       <v-img
         src="@/assets/images/placeholder.png"
         max-height="60vh"
@@ -9,7 +9,7 @@
       >
       </v-img>
     </v-row>
-    <v-row align="center" v-if="$vuetify.breakpoint.mdAndUp" class="mt-16">
+    <v-row align="center" v-if="$vuetify.breakpoint.lgAndUp" class="mt-16">
       <v-col cols="6">
         <v-img src="@/assets/images/placeholder.png" />
       </v-col>
@@ -19,7 +19,7 @@
         <v-list dense class="mt-16">
           <v-list-item v-for="(item, idx) in studies" :key="idx" class="mt-4">
             <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
+              <v-icon color="accent">{{ item.icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <span class="text-h5">{{ item.text }}</span>
@@ -33,13 +33,47 @@
             class="mt-4"
           >
             <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
+              <v-icon color="accent">{{ item.icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <span class="text-h5">{{ item.text }}</span>
             </v-list-item-content>
           </v-list-item>
         </v-list>
+      </v-col>
+    </v-row>
+    <v-row v-else class="mt-16">
+      <v-col>
+        <v-card class="mx-sm-10 mx-md-16 px-sm-5 px-md-10">
+          <v-img src="@/assets/images/placeholder.png" />
+
+          <p class="text-h4 text-center">Patricia Ramírez Perdomo</p>
+
+          <v-list dense class="mt-10">
+            <v-list-item v-for="(item, idx) in studies" :key="idx" class="mt-4">
+              <v-list-item-icon>
+                <v-icon color="accent">{{ item.icon }}</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <span class="text-body-1 text-sm-h5">{{ item.text }}</span>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+          <v-list dense class="mt-10">
+            <v-list-item
+              v-for="(item, idx) in experience"
+              :key="idx"
+              class="mt-4"
+            >
+              <v-list-item-icon>
+                <v-icon color="accent">{{ item.icon }}</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <span class="text-body-1 text-sm-h5">{{ item.text }}</span>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
