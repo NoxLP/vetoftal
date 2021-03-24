@@ -59,7 +59,9 @@
           :key="idx"
           style="white-space: pre-line"
           class="mr-lg-10 text-body-2 text-lg-subtitle-1 font-weight-bold"
-          :to="tab.to"
+          :to="{
+            name: tab.to,
+          }"
           >{{ tab.text }}</v-tab
         >
       </v-tabs>
