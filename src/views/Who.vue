@@ -48,7 +48,10 @@
 </template>
 
 <script>
-import { CURRICULUM_STUDIES, CURRICULUM_EXPERIENCE } from '../helpers/strings'
+import {
+  CURRICULUM_STUDIES,
+  CURRICULUM_EXPERIENCE,
+} from '../helpers/whoStrings'
 export default {
   data: function () {
     return {
