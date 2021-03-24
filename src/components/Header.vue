@@ -52,8 +52,10 @@
         color="primary"
         height="85%"
         right
+        v-model="selectedTab"
       >
         <!--background-color="rgba(255,255,255,0.85)"-->
+        <v-tab class="pa-0" style="min-width: 0px" />
         <v-tab
           v-for="(tab, idx) in tabs"
           :key="idx"
@@ -91,11 +93,19 @@ export default {
           to: 'contact',
         },
       ],
+      selectedTab: 0,
     }
+  },
+  watch: {
+    $route(to) {
+      if (to.name === 'home') {
+        this.selectedTab = -1
+      }
+    },
   },
   methods: {
     logoClick: function () {
-      this.$router.push('/')
+      if (this.$router.currentRoute.name !== 'home') this.$router.push('/')
     },
   },
 }
