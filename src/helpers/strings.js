@@ -3,7 +3,7 @@ const TEXTS_CAROUSEL = {
   diseases:
     'Si has observado alguno de estos síntomas en tu mascota, puede que necesite una revisión...',
   services:
-    'Prestamos servicios veterinaria en la isla de lanzarote, especializados en oftalmología...',
+    'Prestamos servicios de veterinaria en la isla de lanzarote, especializados en oftalmología...',
 }
 
 const TEXTS_HOME = [
@@ -15,6 +15,7 @@ const TEXTS_HOME = [
     ],
     img: require('../assets/images/home/sarandy-westfall--itLKdE7ojA-unsplash.jpg'),
     buttonText: '¿Quiénes somos?',
+    to: 'who',
   },
   {
     texts: [
@@ -23,6 +24,7 @@ const TEXTS_HOME = [
     ],
     img: require('../assets/images/home/artem-militonian-dh5ggbVBcsQ-unsplash.jpg'),
     buttonText: 'Enfermedades oculares',
+    to: 'diseases',
   },
   {
     texts: [
@@ -31,6 +33,7 @@ const TEXTS_HOME = [
     ],
     img: require('../assets/images/placeholder.png'),
     buttonText: 'Nuestros servicios',
+    to: 'services',
   },
 ]
 

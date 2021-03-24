@@ -1,13 +1,15 @@
 <template>
   <div class="home mb-sm-16 mb-lg-0">
     <Carousel class="mt-sm-16 mb-sm-16" />
-    <br v-if="$vuetify.breakpoint.sm || $vuetify.breakpoint.md" />
+    <br />
     <HomeCard
       v-for="(card, idx) in texts"
       :key="idx"
       :textsArray="card.texts"
       :src="card.img"
       :buttonText="card.buttonText"
+      :inverted="idx % 2 !== 0"
+      :to="card.to"
     />
   </div>
 </template>

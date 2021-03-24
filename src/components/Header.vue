@@ -21,14 +21,32 @@
         class="ma-auto"
         v-if="$vuetify.breakpoint.smAndDown"
       ></v-app-bar-nav-icon>
+      <v-spacer v-if="$vuetify.breakpoint.smAndDown"></v-spacer>
       <v-img
+        v-if="$vuetify.breakpoint.smAndDown"
         src="@/assets/images/LogoNewPeqWhite.png"
         contain
-        class="mt-2"
+        class="mt-2 logo"
         height="85%"
+        @click="logoClick"
       ></v-img>
+      <v-tooltip v-else bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-img
+            src="@/assets/images/LogoNewPeqWhite.png"
+            contain
+            class="mt-2 logo"
+            height="85%"
+            @click="logoClick"
+            v-bind="attrs"
+            v-on="on"
+          ></v-img>
+        </template>
+        <span>Portada</span>
+      </v-tooltip>
       <v-spacer></v-spacer>
       <v-tabs
+        v-if="$vuetify.breakpoint.mdAndUp"
         class="mt-1 rounded"
         active-class="active-tabs"
         color="primary"
@@ -41,7 +59,8 @@
           :key="idx"
           style="white-space: pre-line"
           class="mr-lg-10 text-body-2 text-lg-subtitle-1 font-weight-bold"
-          >{{ tab }}</v-tab
+          :to="tab.to"
+          >{{ tab.text }}</v-tab
         >
       </v-tabs>
     </v-app-bar>
@@ -53,13 +72,29 @@ export default {
   data() {
     return {
       tabs: [
-        'Home',
-        'Quiénes somos',
-        'Enfermedades oculares\ny sus síntomas',
-        'Servicios',
-        'Contacto',
+        {
+          text: 'Quiénes somos',
+          to: 'who',
+        },
+        {
+          text: 'Enfermedades oculares\ny sus síntomas',
+          to: 'diseases',
+        },
+        {
+          text: 'Servicios',
+          to: 'services',
+        },
+        {
+          text: 'Contacto',
+          to: 'contact',
+        },
       ],
     }
+  },
+  methods: {
+    logoClick: function () {
+      this.$router.push('/')
+    },
   },
 }
 </script>
@@ -80,6 +115,13 @@ export default {
 .theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) > .v-btn,
 .theme--light.v-tabs > .v-tabs-bar .v-tab--disabled {
   color: black;
+}
+.logo {
+  cursor: pointer;
+}
+.logo:hover {
+  opacity: 0.8 !important;
+  backdrop-filter: blur(15px);
 }
 /*
 linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(217,255,227,0.5) 50%, rgba(150,109,208,0.5) 100%);

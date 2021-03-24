@@ -28,14 +28,15 @@
                           class="mt-md-16 ml-0 ml-md-16 mr-3 mr-md-0"
                         >
                           <v-card
-                            color="#966dd09f"
+                            color="transparent"
+                            flat
                             class="my-16 mb-md-10"
                             width="100%"
                           >
                             <v-card-text class="mb-0 mb-md-10 pb-0">
                               <p
                                 style="white-space: pre-line"
-                                class="text-body-1 text-md-h5 text-left"
+                                class="text-body-1 text-md-h5 text-lg-h4 white--text text-left"
                               >
                                 {{ item.text }}
                               </p>
