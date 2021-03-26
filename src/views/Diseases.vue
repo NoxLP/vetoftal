@@ -10,45 +10,23 @@
       </v-img>
     </v-row>
 
-    <!--SYMPTOMS-->
-    <v-row justify="center">
+    <!--DISEASES MOBILE-->
+    <v-row v-if="$vuetify.breakpoint.mdAndDown">
       <v-col>
-        <v-card class="mx-1">
+        <v-card class="mx-1" color="accent">
           <v-card-title>
-            <p class="mx-auto text-h4 text-center font-weight-bold">
-              {{ sympTitle.title }}
-            </p>
-          </v-card-title>
-          <v-card-subtitle>
-            <p class="text-subtitle-1 text-sm-h6 text-justify font-weight-bold">
-              {{ sympTitle.subtitle }}
-            </p>
-          </v-card-subtitle>
-          <v-card-text>
-            <v-list>
-              <v-list-item v-for="(symptom, idx) in symptoms" :key="idx">
-                <v-list-item-icon>
-                  <v-icon color="accent">mdi-eye</v-icon>
-                </v-list-item-icon>
-                <span class="text-body-1"> {{ symptom }}</span>
-              </v-list-item>
-            </v-list>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-
-    <!--DISEASES-->
-    <v-row>
-      <v-col>
-        <v-card class="mx-1" color="secondary">
-          <v-card-title>
-            <p class="mx-auto text-h4 text-center font-weight-bold">
+            <p
+              class="mx-auto text-h4 text-center font-weight-bold"
+              style="white-space: pre-line"
+            >
               {{ disTitle.title }}
             </p>
           </v-card-title>
           <v-card-subtitle>
-            <p class="text-subtitle-1 text-sm-h6 text-justify font-weight-bold">
+            <p
+              class="text-subtitle-1 text-sm-h6 text-justify font-weight-bold"
+              style="white-space: pre-line"
+            >
               {{ disTitle.subtitle }}
             </p>
           </v-card-subtitle>
@@ -67,6 +45,23 @@
                   >
                     {{ par }}
                   </p>
+                  <v-card
+                    flat
+                    tile
+                    style="border-top: 1px solid lightgray"
+                    class="px-2"
+                  >
+                    <v-chip-group column>
+                      <v-chip
+                        color="primary"
+                        v-for="(symptom, idx) in item.symptoms"
+                        :key="idx"
+                        class="pl-1 pr-2"
+                      >
+                        {{ symptom }}
+                      </v-chip>
+                    </v-chip-group>
+                  </v-card>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -74,6 +69,9 @@
         </v-card>
       </v-col>
     </v-row>
+
+    <!--DISEASES DESKTOP-->
+    <v-row> </v-row>
   </v-container>
 </template>
 

@@ -5,9 +5,9 @@ const SYMPTOMS_TITLE = {
 }
 
 const SYMPTOMS = [
-  'Legañas',
+  'Legañas', //*
   'Dolor ocular',
-  'Úlceras recurrentes',
+  'Úlceras recurrentes', //*
   'Pérdida de visión',
   'Cambio de color en los ojos',
   'Lagrimeo',
@@ -15,9 +15,9 @@ const SYMPTOMS = [
 ]
 
 const DISEASES_TITLE = {
-  title: 'Enfermedades',
+  title: 'Enfermedades\noculares',
   subtitle:
-    'Aquí puedes informarte acerca de las enfermedades oculares más comunes',
+    'Aquí puedes informarte acerca de las enfermedades oculares más comunes y sus síntomas.',
 }
 
 const DISEASES = [
@@ -30,6 +30,11 @@ const DISEASES = [
       'Se recomienda acudir al oftalmólogo si nuestra mascota presenta alguna de estas alteraciones, ya que, de no controlarse, pueden desencadenarse problemas más graves como infecciones graves, úlceras complicadas y ceguera entre otros.',
     ],
     img: require('@/assets/images/placeholder.png'),
+    symptoms: [
+      'Legañas',
+      'Úlceras corneales frecuentes',
+      'Conjuntivitis recurrentes',
+    ],
   },
   {
     title: 'Cataratas',
@@ -50,6 +55,23 @@ const DISEASES = [
       'Se recomienda acudir al oftalmólogo si se observa una disminución en la visión y si hay cambios de hábitos o comportamiento en nuestras mascotas.',
     ],
     img: require('@/assets/images/placeholder.png'),
+    symptoms: ['Pérdida de visión', 'Cambios de hábitos o comportamiento'],
+  },
+  {
+    title: 'Posibles síntomas',
+    paragraphs: [
+      'Si tu mascota presenta alguno de estos síntomas, deberías llevarlo a tu clínica veterinaria de confianza:',
+    ],
+    img: require('@/assets/images/placeholder.png'),
+    symptoms: [
+      'Legañas',
+      'Dolor ocular',
+      'Úlceras recurrentes',
+      'Pérdida de visión',
+      'Cambio de color en los ojos',
+      'Lagrimeo',
+      'Opacificación de alguna parte del ojo',
+    ],
   },
 ]
 
