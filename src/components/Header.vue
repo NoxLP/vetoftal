@@ -92,10 +92,6 @@ export default {
           text: 'Servicios',
           to: 'services',
         },
-        {
-          text: 'Contacto',
-          to: 'contact',
-        },
       ],
       selectedTab: 0,
     }

@@ -55,7 +55,9 @@
                                   name: item.to,
                                 }"
                               >
-                                <v-btn>Infórmate aquí</v-btn>
+                                <v-btn large color="primary" class="text-h6">{{
+                                  item.buttonText
+                                }}</v-btn>
                               </router-link>
                             </v-card-actions>
                           </v-card>
@@ -78,7 +80,8 @@ import { TEXTS_CAROUSEL } from '../helpers/strings'
 export default {
   data: function () {
     return {
-      items: [
+      items: TEXTS_CAROUSEL,
+      /*[
         {
           src: require('@/assets/images/placeholder.png'),
           text: TEXTS_CAROUSEL.who,
@@ -94,7 +97,7 @@ export default {
           text: TEXTS_CAROUSEL.services,
           to: 'services',
         },
-      ],
+      ],*/
       carouselHeight: this.$vuetify.breakpoint.smAndDown ? '60vh' : '70vh',
     }
   },

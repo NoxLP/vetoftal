@@ -1,10 +1,25 @@
-const TEXTS_CAROUSEL = {
-  who: 'Currículum, experiencia, cosas sobre nosotros...',
-  diseases:
-    'Si has observado alguno de estos síntomas en tu mascota, puede que necesite una revisión...',
-  services:
-    'Prestamos servicios de veterinaria en la isla de lanzarote, especializados en oftalmología...',
-}
+const TEXTS_CAROUSEL = [
+  {
+    src: require('@/assets/images/placeholder.png'),
+    text: 'Currículum, experiencia, cosas sobre nosotros...',
+    buttonText: 'Sobre nosotros',
+    to: 'who',
+  },
+  {
+    src: require('@/assets/images/carousel/carousel-diseases.jpg'),
+    text:
+      'Si has observado alguno de estos síntomas en tu mascota, puede que necesite una revisión...',
+    buttonText: 'Infórmate aquí',
+    to: 'diseases',
+  },
+  {
+    src: require('@/assets/images/carousel/pet-surgery-1-1241227-1279x1709.jpg'),
+    text:
+      'Servicios de veterinaria en la isla de lanzarote, especializados en oftalmología...',
+    buttonText: '¿Qué ofertamos?',
+    to: 'services',
+  },
+]
 
 const TEXTS_HOME = [
   {
