@@ -3,7 +3,7 @@
     <v-row align="center" justify="center">
       <v-img
         src="@/assets/images/placeholder.png"
-        max-height="60vh"
+        :max-height="$vuetify.breakpoint.smAndDown ? '60vh' : '70vh'"
         contain
         class="mb-16"
       >
