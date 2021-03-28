@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid fill-height class="mb-16 px-sm-5">
+  <v-container id="diseasesRoot" fluid fill-height class="mb-16 px-0 px-sm-5">
     <v-row align="center" justify="center">
       <v-img
         src="@/assets/images/placeholder.png"
@@ -7,37 +7,70 @@
         contain
         class="mb-16"
       >
+        <template v-slot:placeholder>
+          <v-row class="fill-height ma-0" align="center" justify="center">
+            <v-progress-circular
+              indeterminate
+              color="accent"
+            ></v-progress-circular>
+          </v-row>
+        </template>
       </v-img>
     </v-row>
+    <v-row justify="center">
+      <PageChevron />
+    </v-row>
 
-    <!--DISEASES MOBILE-->
-    <v-row v-if="$vuetify.breakpoint.mdAndDown">
+    <!--TITLE-->
+    <v-row>
       <v-col>
-        <v-card class="mx-1" color="accent">
+        <v-card class="mx-1" flat>
           <v-card-title>
             <p
-              class="mx-auto text-h4 text-center font-weight-bold"
-              style="white-space: pre-line"
+              class="mx-auto text-h4 text-md-h2 text-center font-weight-bold"
+              :style="
+                $vuetify.breakpoint.smAndDown ? 'white-space: pre-line' : ''
+              "
             >
               {{ disTitle.title }}
             </p>
           </v-card-title>
-          <v-card-subtitle>
+          <v-card-subtitle class="d-flex justify-center">
             <p
-              class="text-subtitle-1 text-sm-h6 text-justify font-weight-bold"
+              class="text-subtitle-1 text-sm-h6 text-center text-justify font-weight-bold"
               style="white-space: pre-line"
             >
               {{ disTitle.subtitle }}
             </p>
           </v-card-subtitle>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <!--DISEASES MOBILE-->
+    <v-row v-if="$vuetify.breakpoint.smAndDown">
+      <v-col>
+        <v-card class="mx-1" flat>
           <v-card-text class="pa-0">
             <v-expansion-panels focusable>
               <v-expansion-panel v-for="(item, idx) in diseases" :key="idx">
-                <v-expansion-panel-header>{{
-                  item.title
-                }}</v-expansion-panel-header>
-                <v-expansion-panel-content>
-                  <v-img :src="item.img" max-height="30vh" contain> </v-img>
+                <v-expansion-panel-header>
+                  {{ item.title }}</v-expansion-panel-header
+                >
+                <v-expansion-panel-content color="#D9FFE32f">
+                  <v-img :src="item.img" max-height="30vh" contain>
+                    <template v-slot:placeholder>
+                      <v-row
+                        class="fill-height ma-0"
+                        align="center"
+                        justify="center"
+                      >
+                        <v-progress-circular
+                          indeterminate
+                          color="accent"
+                        ></v-progress-circular>
+                      </v-row> </template
+                  ></v-img>
                   <p
                     v-for="(par, idx) in item.paragraphs"
                     :key="idx"
@@ -50,6 +83,7 @@
                     tile
                     style="border-top: 1px solid lightgray"
                     class="px-2"
+                    color="#D9FFE32f"
                   >
                     <v-chip-group column>
                       <v-chip
@@ -70,12 +104,23 @@
       </v-col>
     </v-row>
 
-    <!--DISEASES DESKTOP-->
-    <v-row> </v-row>
+    <DiseasesCard
+      v-else
+      v-for="(item, idx) in diseases"
+      :key="idx"
+      :title="item.title"
+      :textsArray="item.paragraphs"
+      :src="item.img"
+      :symptoms="item.symptoms"
+      :inverted="idx % 2 !== 0"
+      :last="idx === diseases.length - 1"
+    />
   </v-container>
 </template>
 
 <script>
+import DiseasesCard from '../components/DiseasesCard'
+import PageChevron from '../components/PageChevron'
 import {
   DISEASES,
   SYMPTOMS,
@@ -84,6 +129,7 @@ import {
 } from '../helpers/diseasesStrings'
 
 export default {
+  name: 'diseases',
   data: function () {
     return {
       sympTitle: SYMPTOMS_TITLE,
@@ -91,6 +137,10 @@ export default {
       disTitle: DISEASES_TITLE,
       diseases: DISEASES,
     }
+  },
+  components: { DiseasesCard, PageChevron },
+  mounted() {
+    this.diseases.map((x) => (x['expandHeaderHiddenColor'] = 'white'))
   },
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <v-container class="px-0 mt-10 mt-md-16 mt-lg-10" fluid>
+  <v-container class="px-0 mt-5 mt-md-16 mt-lg-10" fluid>
     <v-row class="px-0 px-lg-16 mr-0 ml-0" justify="center">
       <v-col cols="12" md="10" class="pr-0 pl-0">
         <v-card rounded class="ma-0 pa-0 rounded-lg" elevation="10">
@@ -20,6 +20,11 @@
                     :key="idx"
                     :src="item.src"
                   >
+                    <v-progress-circular
+                      v-show="!item.src"
+                      indeterminate
+                      color="accent"
+                    ></v-progress-circular>
                     <v-container fluid fill-height class="mt-16">
                       <v-row justify="start" align="end" class="mt-md-16">
                         <v-col

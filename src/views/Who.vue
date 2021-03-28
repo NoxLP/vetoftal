@@ -7,11 +7,27 @@
         contain
         class="mb-16"
       >
+        <template v-slot:placeholder>
+          <v-row class="fill-height ma-0" align="center" justify="center">
+            <v-progress-circular
+              indeterminate
+              color="accent"
+            ></v-progress-circular>
+          </v-row>
+        </template>
       </v-img>
     </v-row>
     <v-row align="center" v-if="$vuetify.breakpoint.lgAndUp" class="mt-16">
       <v-col cols="6">
-        <v-img src="@/assets/images/placeholder.png" />
+        <v-img src="@/assets/images/placeholder.png">
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular
+                indeterminate
+                color="accent"
+              ></v-progress-circular>
+            </v-row> </template
+        ></v-img>
       </v-col>
       <v-col cols="5" class="mt-16 ml-0 pl-0 pt-16">
         <span class="text-h4">Patricia Ramírez Perdomo</span>
@@ -45,7 +61,15 @@
     <v-row v-else class="mt-16">
       <v-col>
         <v-card class="mx-sm-10 mx-md-16 px-sm-5 px-md-10">
-          <v-img src="@/assets/images/placeholder.png" />
+          <v-img src="@/assets/images/placeholder.png">
+            <template v-slot:placeholder>
+              <v-row class="fill-height ma-0" align="center" justify="center">
+                <v-progress-circular
+                  indeterminate
+                  color="accent"
+                ></v-progress-circular>
+              </v-row> </template
+          ></v-img>
 
           <p class="text-h4 text-center">Patricia Ramírez Perdomo</p>
 
