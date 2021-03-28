@@ -7,15 +7,19 @@
       elevate-on-scroll
       shrink-on-scroll
       app
-      src="@/assets/images/carousel/pet-surgery-1-1241227-1279x1709.jpg"
       class="pa-0 bar"
     >
-      <template v-slot:img="{ props }">
+      <!--src="@/assets/images/carousel/pet-surgery-1-1241227-1279x1709.jpg"-->
+      <!--<template v-slot:img="{ props }">
         <v-img
           v-bind="props"
-          gradient="90deg, rgba(255,255,255,1) 0%, rgba(217,255,252,0.8) 100%"
+          gradient="90deg, rgba(217,255,227,0.1) 0%, rgba(217,255,227,0.1) 100%"
         ></v-img>
-      </template>
+      </template>-->
+      <!--gradient="90deg, rgba(255,255,255,1) 0%, rgba(209, 174, 130, 0.8) 100%"
+        rgba(209, 174, 130, 0.8)
+        rgba(217,255,252,0.8)
+        rgba(150, 109, 208, 0.8)-->
       <v-app-bar-nav-icon
         fixed
         class="ma-auto"
@@ -81,7 +85,7 @@ export default {
           to: 'who',
         },
         {
-          text: 'Enfermedades oculares\ny sus síntomas',
+          text: 'Enfermedades oculares',
           to: 'diseases',
         },
         {
@@ -116,7 +120,7 @@ export default {
   background-image: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 0%,
-    rgba(217, 255, 227, 0.5) 100%
+    rgba(217, 255, 227, 0.5) 100% rgb(88, 209, 117)
   );
 }
 .active-tabs {
