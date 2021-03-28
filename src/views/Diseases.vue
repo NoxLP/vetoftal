@@ -17,12 +17,13 @@
         </template>
       </v-img>
     </v-row>
+
     <v-row justify="center">
       <PageChevron />
     </v-row>
 
     <!--TITLE-->
-    <v-row>
+    <v-row id="title">
       <v-col>
         <v-card class="mx-1" flat>
           <v-card-title>

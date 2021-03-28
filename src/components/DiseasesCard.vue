@@ -1,15 +1,15 @@
 <template>
   <div>
     <!--DESKTOP-->
-    <v-container class="mt-16 mt-lg-1 mb-16" fluid>
+    <v-container class="mt-16 mt-lg-1 mb-5" fluid>
       <v-row justify="center" align="center">
         <v-card
           height="auto"
-          class="pa-0 py-16 rounded-0"
+          class="pa-0 pb-5 pt-16 rounded-0 mb-0"
           flat
           :color="!inverted ? '#D9FFE32f' : 'transparent'"
         >
-          <v-card-text>
+          <v-card-text class="mb-0 pb-0">
             <v-row v-if="!inverted" class="pl-0 pt-0" align="center">
               <v-col cols="5" class="ml-0 pl-4">
                 <v-img
@@ -118,7 +118,7 @@
         </v-card>
       </v-row>
     </v-container>
-    <PageChevron :up="last" />
+    <PageChevron :up="last" class="mt-0" />
   </div>
 </template>
 
