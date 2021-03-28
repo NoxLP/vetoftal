@@ -18,12 +18,13 @@ const CURRICULUM_STUDIES = [
 ]
 const CURRICULUM_EXPERIENCE = [
   {
-    text: 'Más de 10 años de experiencia en Oftalmología Veterinaria',
+    text:
+      'Patricia tiene más de 10 años de experiencia como especialista en Oftalmología Veterinaria, trabajando en una gran variedad de clínicas veterinarias.',
     icon: 'work',
   },
   {
     text:
-      'Autora y coautora de múltiples poster y comunicaciones en congresos nacionales e intenacionales',
+      'Además, ha sido autora y coautora de múltiples póster y comunicaciones en congresos nacionales e intenacionales.',
     icon: 'work',
   },
 ]
