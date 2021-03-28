@@ -19,11 +19,12 @@
     </v-row>
 
     <v-row justify="center">
-      <PageChevron />
+      <PageChevron elementId="curriculum" />
     </v-row>
 
     <!--DESKTOP-->
     <v-row
+      id="curriculum"
       justify="center"
       align="center"
       v-if="$vuetify.breakpoint.lgAndUp"

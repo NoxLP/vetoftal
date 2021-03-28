@@ -18,11 +18,19 @@
 export default {
   props: {
     up: Boolean,
+    elementId: String,
   },
   methods: {
     chevronNavigation: function () {
-      if (!this.up) this.$el.scrollIntoView({ behavior: 'smooth' })
-      else document.getElementById('app').scrollIntoView({ behavior: 'smooth' })
+      if (!this.up) {
+        if (!this.elementId || this.elementId.length === 0)
+          this.$el.scrollIntoView({ behavior: 'smooth' })
+        else
+          document
+            .getElementById(this.elementId)
+            .scrollIntoView({ behavior: 'smooth' })
+      } else
+        document.getElementById('app').scrollIntoView({ behavior: 'smooth' })
     },
   },
 }
