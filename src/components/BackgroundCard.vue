@@ -45,6 +45,18 @@
                 <p class="text-justify text-body-1 text-sm-h5">
                   {{ textsArray[2] }}
                 </p>
+                <router-link
+                  style="text-decoration: none; color: inherit"
+                  type="button"
+                  class="btn mr-5 mt-10"
+                  :to="{
+                    name: to,
+                  }"
+                >
+                  <v-btn dark color="primary" class="white--text mb-3 text-h6">
+                    {{ buttonText }}</v-btn
+                  >
+                </router-link>
               </v-col>
             </v-row>
             <v-row v-if="inverted" class="pl-0" align="center">
@@ -58,9 +70,25 @@
                 <p class="text-justify text-body-1 text-sm-h5">
                   {{ textsArray[2] }}
                 </p>
+                <router-link
+                  style="text-decoration: none; color: inherit"
+                  type="button"
+                  class="btn mr-5 mt-10"
+                  :to="{
+                    name: to,
+                  }"
+                >
+                  <v-btn dark color="primary" class="white--text mb-3 text-h6">
+                    {{ buttonText }}</v-btn
+                  >
+                </router-link>
               </v-col>
               <v-col cols="6" lg="5" class="ml-0 pl-4">
-                <v-img class="ml-0 rounded-lg" height="45vh" :src="src">
+                <v-img
+                  class="ml-0 rounded-lg elevation-20"
+                  height="45vh"
+                  :src="src"
+                >
                   <template v-slot:placeholder>
                     <v-row
                       class="fill-height ma-0"

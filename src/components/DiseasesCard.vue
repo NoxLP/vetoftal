@@ -94,7 +94,11 @@
                 </v-card>
               </v-col>
               <v-col cols="5" class="ml-0 pl-4">
-                <v-img class="ml-0 rounded-lg" height="45vh" :src="src">
+                <v-img
+                  class="ml-0 rounded-lg elevation-20"
+                  height="45vh"
+                  :src="src"
+                >
                   <template v-slot:placeholder>
                     <v-row
                       class="fill-height ma-0"
