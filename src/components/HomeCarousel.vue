@@ -2,14 +2,17 @@
   <v-container class="px-0 mt-5 mt-md-16 mt-lg-10" fluid>
     <v-row class="px-0 px-lg-16 mr-0 ml-0" justify="center">
       <v-col cols="12" md="10" class="pr-0 pl-0">
-        <v-card rounded class="ma-0 pa-0 rounded-lg" elevation="10">
+        <v-card
+          :class="`ma-0 pa-0 rounded-${$vuetify.breakpoint.mdAndUp ? 'lg' : 0}`"
+        >
           <v-container class="ma-0 pa-0" fluid>
             <v-row class="ma-0 pa-0" justify="center">
               <v-col class="ma-0 pa-0" align="center">
                 <v-carousel
                   cycle
-                  rounded
-                  class="pa-0 ma-0 rounded-lg"
+                  :class="`pa-0 ma-0 rounded-${
+                    $vuetify.breakpoint.mdAndUp ? 'lg' : 0
+                  }`"
                   delimiter-icon="mdi-minus"
                   hide-delimiter-background
                   :height="carouselHeight"
@@ -104,4 +107,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
