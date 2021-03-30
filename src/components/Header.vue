@@ -1,8 +1,9 @@
 <template>
   <div>
     <v-app-bar
+      dense
       fixed
-      color="hsl(232, 64%, 98%)"
+      color="hsl(138, 64%, 98%)"
       elevate-on-scroll
       shrink-on-scroll
       app
