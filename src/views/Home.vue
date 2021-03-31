@@ -1,7 +1,7 @@
 <template>
   <div class="home mb-sm-16 mb-lg-0">
     <Carousel class="mt-sm-12 mb-sm-12" />
-    <PageChevron />
+    <PageChevron self />
     <BackgroundCard
       v-for="(card, idx) in texts"
       :key="idx"
@@ -11,6 +11,8 @@
       :inverted="idx % 2 !== 0"
       :to="card.to"
       :last="idx === texts.length - 1"
+      :idx="idx"
+      @chevronClick="onChevronClick"
     />
   </div>
 </template>
@@ -23,12 +25,20 @@ import { TEXTS_HOME } from '../helpers/strings'
 
 export default {
   name: 'Home',
+  components: { Carousel, BackgroundCard, PageChevron },
   data: function () {
     return {
       texts: TEXTS_HOME,
     }
   },
-  components: { Carousel, BackgroundCard, PageChevron },
+  methods: {
+    onChevronClick(idx) {
+      console.log('go to ', idx + 1)
+      document
+        .getElementById(`bCard${idx + 1}`)
+        .scrollIntoView({ behavior: 'smooth' })
+    },
+  },
 }
 </script>
 <style scoped>

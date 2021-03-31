@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :id="`bCard${idx}`">
     <!--DESKTOP-->
     <v-container
       full-height
@@ -106,7 +106,11 @@
               </v-col>
             </v-row>
             <v-row justify="center" align="end">
-              <PageChevron :up="last" />
+              <PageChevron
+                :up="last"
+                :idx="idx"
+                @chevronClick="onChevronClick"
+              />
             </v-row>
           </v-container>
         </v-card>
@@ -171,6 +175,12 @@ export default {
     inverted: Boolean,
     to: String,
     last: Boolean,
+    idx: Number,
+  },
+  methods: {
+    onChevronClick(idx) {
+      this.$emit('chevronClick', idx)
+    },
   },
 }
 </script>

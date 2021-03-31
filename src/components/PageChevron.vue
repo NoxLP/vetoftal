@@ -18,17 +18,23 @@
 export default {
   props: {
     up: Boolean,
+    self: Boolean,
     elementId: String,
+    idx: Number,
   },
   methods: {
     chevronNavigation: function () {
       if (!this.up) {
-        if (!this.elementId || this.elementId.length === 0)
+        if (this.self) {
           this.$el.scrollIntoView({ behavior: 'smooth' })
-        else
+        } else if (this.elementId && this.elementId.length === 0) {
           document
             .getElementById(this.elementId)
             .scrollIntoView({ behavior: 'smooth' })
+        } else {
+          console.log('')
+          this.$emit('chevronClick', this.idx)
+        }
       } else
         document.getElementById('app').scrollIntoView({ behavior: 'smooth' })
     },

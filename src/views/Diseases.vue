@@ -44,7 +44,7 @@
     </v-row>
 
     <v-row justify="center" class="mt-0">
-      <PageChevron />
+      <PageChevron self />
     </v-row>
 
     <!--DISEASES MOBILE-->
@@ -114,6 +114,8 @@
       :symptoms="item.symptoms"
       :inverted="idx % 2 !== 0"
       :last="idx === diseases.length - 1"
+      :idx="idx"
+      @chevronClick="onChevronClick"
     />
   </v-container>
 </template>
@@ -139,6 +141,14 @@ export default {
     }
   },
   components: { DiseasesCard, PageChevron },
+  methods: {
+    onChevronClick(idx) {
+      console.log('go to ', idx + 1)
+      document
+        .getElementById(`bCard${idx + 1}`)
+        .scrollIntoView({ behavior: 'smooth' })
+    },
+  },
   mounted() {
     this.diseases.map((x) => (x['expandHeaderHiddenColor'] = 'white'))
   },
