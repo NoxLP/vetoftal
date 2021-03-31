@@ -2,18 +2,19 @@
   <div>
     <!--DESKTOP-->
     <v-container
+      full-height
       v-if="$vuetify.breakpoint.mdAndUp"
       class="mt-16 mt-lg-1 mb-16"
       fluid
     >
       <v-row justify="center" align="center">
         <v-card
-          height="auto"
+          height="100vh"
           class="pa-0 py-16 rounded-0"
           flat
           :color="!inverted ? '#D9FFE32f' : 'transparent'"
         >
-          <v-card-text>
+          <v-container fill-height fluid>
             <v-row v-if="!inverted" class="pl-0" align="center">
               <v-col cols="6" lg="5" class="ml-0 pl-4">
                 <v-img
@@ -104,7 +105,10 @@
                 </v-img>
               </v-col>
             </v-row>
-          </v-card-text>
+            <v-row justify="center" align="end">
+              <PageChevron :up="last" />
+            </v-row>
+          </v-container>
         </v-card>
       </v-row>
     </v-container>
@@ -153,7 +157,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <PageChevron :up="last" />
   </div>
 </template>
 

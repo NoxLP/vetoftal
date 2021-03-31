@@ -4,13 +4,14 @@
     <v-container class="mt-16 mt-lg-1 mb-5" fluid>
       <v-row justify="center" align="center">
         <v-card
-          height="auto"
+          height="100vh"
           class="pa-0 pb-5 pt-16 rounded-0 mb-0"
           flat
           :color="!inverted ? '#D9FFE32f' : 'transparent'"
         >
-          <v-card-text class="mb-0 pb-0">
+          <v-container fill-height fluid>
             <v-row v-if="!inverted" class="pl-0 pt-0" align="center">
+              <!--IMAGE-->
               <v-col cols="5" class="ml-0 pl-4">
                 <v-img
                   class="ml-0 rounded-lg elevation-20"
@@ -31,6 +32,8 @@
                   </template>
                 </v-img>
               </v-col>
+
+              <!--TEXTS-->
               <v-col cols="6" class="ml-16 mt-16 pt-0">
                 <h1 class="mb-10 mt-0">{{ title }}</h1>
 
@@ -43,6 +46,8 @@
                 <p class="text-justify text-body-1 text-sm-h5">
                   {{ textsArray[2] }}
                 </p>
+
+                <!--SYMPTOMS CHIPS-->
                 <v-card
                   flat
                   tile
@@ -63,6 +68,7 @@
                 </v-card>
               </v-col>
             </v-row>
+
             <v-row v-else class="pl-0" align="center">
               <v-col cols="6" class="mr-16 mt-16">
                 <h1 class="mb-10 mt-0">{{ title }}</h1>
@@ -114,16 +120,21 @@
                 </v-img>
               </v-col>
             </v-row>
-          </v-card-text>
+
+            <!--CHEVRON-->
+            <v-row justify="center" align="end">
+              <PageChevron :up="last" />
+            </v-row>
+          </v-container>
         </v-card>
       </v-row>
     </v-container>
-    <PageChevron :up="last" class="mt-0" />
   </div>
 </template>
 
 <script>
 import PageChevron from './PageChevron'
+
 export default {
   components: { PageChevron },
   props: {

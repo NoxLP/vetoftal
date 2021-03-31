@@ -17,7 +17,7 @@ const SYMPTOMS = [
 const DISEASES_TITLE = {
   title: 'Enfermedades\noculares',
   subtitle:
-    'Aquí puedes informarte acerca de las enfermedades oculares más comunes y sus síntomas.',
+    'En esta sección puedes informarte acerca de las enfermedades oculares más comunes y sus síntomas.',
 }
 
 const DISEASES = [

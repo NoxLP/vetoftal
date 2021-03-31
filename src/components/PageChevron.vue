@@ -1,15 +1,15 @@
 <template>
   <div class="d-flex justify-center mx-0 mt-sm-12 mb-sm-12">
     <v-btn
-      color="primary lighten-3"
+      color="white"
       class="mt-5 mt-lg-0"
       fab
       small
       @click="chevronNavigation"
       elevation="2"
     >
-      <v-icon v-if="!up" x-large dark>mdi-chevron-down</v-icon>
-      <v-icon v-else x-large dark>mdi-chevron-up</v-icon>
+      <v-icon color="primary" v-if="!up" x-large dark>mdi-chevron-down</v-icon>
+      <v-icon color="primary" v-else x-large dark>mdi-chevron-up</v-icon>
     </v-btn>
   </div>
 </template>

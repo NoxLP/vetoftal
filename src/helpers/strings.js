@@ -34,7 +34,7 @@ const TEXTS_HOME = [
   },
   {
     texts: [
-      'Nos preocupamos por nuestras mascotas, sin embargo no conocemos las posibles enfemedades oculares que pueden sufrir.',
+      'Nos preocupamos por nuestras mascotas, sin embargo, no conocemos las posibles enfemedades oculares que pueden sufrir.',
       'Te damos información sobre las más comunes para que tu mascota siempre disfrute de la mejor salud posible.',
     ],
     img: require('../assets/images/home/artem-militonian-dh5ggbVBcsQ-unsplash.jpg'),
