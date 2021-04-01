@@ -76,15 +76,23 @@
         >
       </v-tabs>
     </v-app-bar>
-    <v-navigation-drawer absolute temporary v-model="drawer" height="30vh">
-      <v-list nav dense>
-        <v-list-item v-for="(item, idx) in tabs" :key="idx">
-          <router-link
-            :to="{
-              name: item.to,
-            }"
-            >{{ item.text }}</router-link
-          >
+    <v-navigation-drawer fixed temporary v-model="drawer">
+      <v-list nav dense class="mt-2">
+        <v-list-item v-for="(item, idx) in tabsMobile" :key="idx">
+          <v-container fill-height fluid>
+            <v-row>
+              <router-link
+                class="primary--text text--darken-3"
+                :to="{
+                  name: item.to,
+                }"
+                >{{ item.text }}</router-link
+              >
+            </v-row>
+            <v-row class="mt-7 mb-0">
+              <v-divider />
+            </v-row>
+          </v-container>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -99,6 +107,24 @@ export default {
     return {
       drawer: false,
       tabs: [
+        {
+          text: 'Quiénes somos',
+          to: 'who',
+        },
+        {
+          text: 'Enfermedades oculares',
+          to: 'diseases',
+        },
+        {
+          text: 'Servicios',
+          to: 'services',
+        },
+      ],
+      tabsMobile: [
+        {
+          text: 'Portada',
+          to: 'home',
+        },
         {
           text: 'Quiénes somos',
           to: 'who',
