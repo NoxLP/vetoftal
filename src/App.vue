@@ -6,13 +6,13 @@
     </v-main>
     <v-footer
       color="primary darken-4"
-      class="white--text mt-16 mb-0 pb-9 pt-6 footer"
+      class="white--text mt-16 mb-0 pb-9 pt-6 footer px-0"
     >
       <v-row
         v-if="$vuetify.breakpoint.smAndUp"
         justify="center"
         align="center"
-        class="mb-0"
+        class="mb-0 px-6"
       >
         <v-col cols="6" md="3" lg="4">
           <v-row justify="center" v-if="$vuetify.breakpoint.lg">
@@ -60,7 +60,7 @@
           <v-row justify="center" align="center">
             <span>Todos los derechos reservados</span>
           </v-row>
-          <v-row justify="center" align="center" class="mt-7">
+          <v-row justify="center" align="center" class="mt-9">
             <v-btn
               v-for="(social, idx) in socials"
               :key="idx"
@@ -74,9 +74,10 @@
           </v-row>
         </v-container>
       </v-row>
-      <v-row justify="center" class="mt-7 mt-md-12">
+      <v-row justify="center" class="mt-7 mt-md-12 mx-0 px-0">
         <a class="footer-anchor">Aviso legal</a>
-        <pre> &nbsp;|&nbsp;&nbsp;</pre>
+        <pre v-if="$vuetify.breakpoint.smAndUp"> &nbsp;|&nbsp;&nbsp;</pre>
+        <pre v-else> |&nbsp;</pre>
         <a
           class="footer-anchor"
           target="_blank"
