@@ -6,8 +6,34 @@
     </v-main>
     <v-footer
       color="primary darken-4"
-      class="white--text mt-16 mb-0 pb-9 pt-6 footer px-0"
+      class="white--text mt-16 mb-0 pb-9 pt-0 pt-md-6 footer px-0"
     >
+      <v-row
+        v-if="$vuetify.breakpoint.smAndDown"
+        justify="center"
+        align="center"
+        class="mb-4 mt-0"
+      >
+        <v-btn-toggle
+          dark
+          background-color="transparent"
+          mandatory
+          v-model="footerNav"
+        >
+          <v-btn icon :to="{ name: 'home' }">
+            <v-icon>mdi-home</v-icon>
+          </v-btn>
+          <v-btn icon :to="{ name: 'who' }">
+            <v-icon>mdi-information</v-icon>
+          </v-btn>
+          <v-btn icon :to="{ name: 'diseases' }">
+            <v-img src="@/assets/icons/pets-24px.svg"></v-img>
+          </v-btn>
+          <v-btn icon :to="{ name: 'services' }">
+            <v-img src="@/assets/icons/medical_services-24px.svg"></v-img>
+          </v-btn>
+        </v-btn-toggle>
+      </v-row>
       <v-row
         v-if="$vuetify.breakpoint.smAndUp"
         justify="center"
@@ -95,6 +121,7 @@ export default {
   name: 'App',
   components: { Header },
   data: () => ({
+    footerNav: '',
     tabs: [
       {
         text: 'Portada',
