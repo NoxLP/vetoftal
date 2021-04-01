@@ -148,7 +148,6 @@ export default {
   components: { DiseasesCard, PageChevron },
   methods: {
     onChevronClick(idx) {
-      console.log('go to ', idx + 1)
       document
         .getElementById(`dCard${idx + 1}`)
         .scrollIntoView({ behavior: 'smooth' })

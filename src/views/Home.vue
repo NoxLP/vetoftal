@@ -33,7 +33,6 @@ export default {
   },
   methods: {
     onChevronClick(idx) {
-      console.log('go to ', idx + 1)
       document
         .getElementById(`bCard${idx + 1}`)
         .scrollIntoView({ behavior: 'smooth' })
