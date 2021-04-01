@@ -55,7 +55,7 @@
       <v-spacer></v-spacer>
       <v-tabs
         v-if="$vuetify.breakpoint.mdAndUp"
-        class="mt-3"
+        class="mt-5 mt-lg-3 mr-10 mr-lg-0"
         active-class="active-tabs"
         color="primary"
         height="60%"
