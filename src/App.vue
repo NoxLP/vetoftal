@@ -74,7 +74,7 @@
           </v-row>
         </v-container>
       </v-row>
-      <v-row justify="center" class="mt-7 mt-md-12 mx-0 px-0">
+      <v-row justify="center" class="mt-7 mt-md-12 mt-lg-8 mx-0 px-0">
         <a class="footer-anchor">Aviso legal</a>
         <pre v-if="$vuetify.breakpoint.smAndUp"> &nbsp;|&nbsp;&nbsp;</pre>
         <pre v-else> |&nbsp;</pre>
