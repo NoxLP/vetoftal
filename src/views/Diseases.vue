@@ -1,16 +1,16 @@
 <template>
-  <v-container id="diseasesRoot" fluid fill-height>
+  <v-container id="diseasesRoot" fluid fill-height class="px-0">
     <v-row
       align="center"
       justify="center"
-      class="px-0 px-lg-16 mt-2 mt-md-5 mt-lg-0 pa-0"
+      class="mx-0 px-0 px-lg-16 mt-2 mt-md-5 mt-lg-0 pa-0"
     >
-      <v-col cols="12" md="10" class="px-0 px-lg-3">
-        <v-card class="px-0 mt-sm-10 mb-3 mx-md-10">
+      <v-col cols="12" md="10" class="px-0 px-lg-3 mx-0">
+        <v-card class="px-0 mt-sm-10 mb-3 mx-0 mx-md-10">
           <v-img
             src="@/assets/images/header/priscilla-du-preez-2hc6ocDAsNY-unsplash.jpg"
-            :max-height="$vuetify.breakpoint.smAndDown ? '60vh' : '70vh'"
-            :height="$vuetify.breakpoint.smAndDown ? '60vh' : '70vh'"
+            :max-height="$vuetify.breakpoint.smAndDown ? '40vh' : '50vh'"
+            :height="$vuetify.breakpoint.smAndDown ? '40vh' : '50vh'"
             class="d-flex align-end"
           >
             <template v-slot:placeholder>
@@ -21,39 +21,38 @@
                 ></v-progress-circular>
               </v-row>
             </template>
-            <v-spacer></v-spacer>
-            <!--TITLE-->
-            <v-card class="mx-1" flat color="transparent">
-              <v-card-title>
-                <p
-                  class="mx-auto text-shadow white--text text--lighten-2 text-h4 text-md-h2 text-center font-weight-bold"
-                  :style="
-                    $vuetify.breakpoint.smAndDown ? 'white-space: pre-line' : ''
-                  "
-                >
-                  {{ disTitle.title }}
-                </p>
-              </v-card-title>
-              <v-card-subtitle class="d-flex justify-center">
-                <p
-                  class="text-shadow white--text text--lighten-2 text-subtitle-1 text-sm-h6 text-center text-justify font-weight-bold"
-                  style="white-space: pre-line"
-                >
-                  {{ disTitle.subtitle }}
-                </p>
-              </v-card-subtitle>
-            </v-card>
           </v-img>
+        </v-card>
+        <!--TITLE-->
+        <v-card class="ml-3 mr-8 mt-3 mt-md-12" flat color="transparent">
+          <v-card-title>
+            <p
+              class="mx-auto black--text text--lighten-2 text-h4 text-md-h2 text-center font-weight-bold"
+              :style="
+                $vuetify.breakpoint.smAndDown ? 'white-space: pre-line' : ''
+              "
+            >
+              {{ disTitle.title }}
+            </p>
+          </v-card-title>
+          <v-card-subtitle class="d-flex justify-center pb-0">
+            <p
+              class="black--text text--lighten-2 text-subtitle-1 text-sm-h6 text-center text-justify font-weight-bold mb-0"
+              style="white-space: pre-line"
+            >
+              {{ disTitle.subtitle }}
+            </p>
+          </v-card-subtitle>
         </v-card>
       </v-col>
     </v-row>
 
-    <v-row justify="center" class="mt-0 mb-10 mb-lg-0">
+    <v-row justify="center" class="mt-0 mt-md-16 mt-lg-0 mb-10 mb-md-0">
       <PageChevron />
     </v-row>
 
     <!--DISEASES MOBILE-->
-    <v-row v-if="$vuetify.breakpoint.smAndDown">
+    <v-row v-if="$vuetify.breakpoint.smAndDown" justify="center">
       <v-col>
         <v-card class="mx-1" flat>
           <v-card-text class="pa-0">
@@ -110,6 +109,7 @@
     </v-row>
 
     <DiseasesCard
+      class="mt-0"
       v-else
       v-for="(item, idx) in diseases"
       :key="idx"

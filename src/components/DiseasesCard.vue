@@ -1,10 +1,10 @@
 <template>
   <!--DESKTOP-->
-  <v-container :id="`dCard${idx}`" class="mt-16 mt-lg-1 mb-5 mx-0 px-0" fluid>
+  <v-container :id="`dCard${idx}`" class="mt-0 mt-lg-1 mb-5 mx-0 px-0" fluid>
     <v-row justify="center" align="center">
       <v-card
         height="100vh"
-        class="pa-0 pb-5 pt-16 rounded-0 mb-0"
+        class="pa-0 pb-5 pt-0 pt-lg-16 rounded-0 mb-0"
         flat
         :color="!inverted ? '#D9FFE32f' : 'transparent'"
       >
