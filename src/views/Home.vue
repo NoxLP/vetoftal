@@ -1,7 +1,7 @@
 <template>
   <div class="home mb-sm-16 mb-lg-0">
     <Carousel class="mt-sm-12 mb-sm-12" />
-    <PageChevron self />
+    <PageChevron />
     <BackgroundCard
       v-for="(card, idx) in texts"
       :key="idx"

@@ -44,7 +44,7 @@
     </v-row>
 
     <v-row justify="center" class="mt-0">
-      <PageChevron self />
+      <PageChevron />
     </v-row>
 
     <!--DISEASES MOBILE-->
@@ -145,7 +145,7 @@ export default {
     onChevronClick(idx) {
       console.log('go to ', idx + 1)
       document
-        .getElementById(`bCard${idx + 1}`)
+        .getElementById(`dCard${idx + 1}`)
         .scrollIntoView({ behavior: 'smooth' })
     },
   },
