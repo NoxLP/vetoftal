@@ -1,11 +1,16 @@
 <template>
   <v-container id="diseasesRoot" fluid fill-height>
-    <v-row align="center" justify="center" class="pa-0">
-      <v-col cols="10">
-        <v-card class="mt-sm-10 mb-3 mx-10">
+    <v-row
+      align="center"
+      justify="center"
+      class="px-0 px-lg-16 mt-2 mt-md-5 mt-lg-0 pa-0"
+    >
+      <v-col cols="12" md="10" class="px-0 px-lg-3">
+        <v-card class="px-0 mt-sm-10 mb-3 mx-md-10">
           <v-img
             src="@/assets/images/header/priscilla-du-preez-2hc6ocDAsNY-unsplash.jpg"
             :max-height="$vuetify.breakpoint.smAndDown ? '60vh' : '70vh'"
+            :height="$vuetify.breakpoint.smAndDown ? '60vh' : '70vh'"
             class="d-flex align-end"
           >
             <template v-slot:placeholder>
@@ -43,7 +48,7 @@
       </v-col>
     </v-row>
 
-    <v-row justify="center" class="mt-0">
+    <v-row justify="center" class="mt-0 mb-10 mb-lg-0">
       <PageChevron />
     </v-row>
 
@@ -58,7 +63,7 @@
                   {{ item.title }}</v-expansion-panel-header
                 >
                 <v-expansion-panel-content color="#D9FFE32f">
-                  <v-img :src="item.img" max-height="30vh" contain>
+                  <v-img :src="item.img" max-height="30vh" contain class="mb-5">
                     <template v-slot:placeholder>
                       <v-row
                         class="fill-height ma-0"
@@ -74,7 +79,7 @@
                   <p
                     v-for="(par, idx) in item.paragraphs"
                     :key="idx"
-                    class="text-body-2 text-lg-subtitle-1"
+                    class="text-body-1 text-lg-subtitle-1 mb-5"
                   >
                     {{ par }}
                   </p>
@@ -82,7 +87,7 @@
                     flat
                     tile
                     style="border-top: 1px solid lightgray"
-                    class="px-2"
+                    class="px-2 pb-2 pt-2"
                     color="#D9FFE32f"
                   >
                     <v-chip-group column>
@@ -90,7 +95,7 @@
                         color="primary"
                         v-for="(symptom, idx) in item.symptoms"
                         :key="idx"
-                        class="pl-1 pr-2"
+                        class="pl-2 pr-2 mt-2"
                       >
                         {{ symptom }}
                       </v-chip>

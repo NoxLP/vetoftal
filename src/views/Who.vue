@@ -1,25 +1,35 @@
 <template>
   <v-container fluid fill-height>
-    <v-row align="center" justify="center" class="mt-10 mt-lg-0">
-      <v-img
-        src="@/assets/images/placeholder.png"
-        :max-height="$vuetify.breakpoint.smAndDown ? '60vh' : '70vh'"
-        contain
-        class="mb-16"
-      >
-        <template v-slot:placeholder>
-          <v-row class="fill-height ma-0" align="center" justify="center">
-            <v-progress-circular
-              indeterminate
-              color="accent"
-            ></v-progress-circular>
-          </v-row>
-        </template>
-      </v-img>
+    <v-row
+      align="center"
+      justify="center"
+      class="px-0 px-lg-16 mt-2 mt-md-5 mt-lg-0 pa-0"
+    >
+      <v-col cols="12" md="10" class="px-0 px-lg-3">
+        <v-card class="px-0 mt-sm-10 mb-3 mx-md-10">
+          <v-img
+            src="@/assets/images/placeholder.png"
+            :max-height="$vuetify.breakpoint.smAndDown ? '60vh' : '70vh'"
+            :height="$vuetify.breakpoint.smAndDown ? '60vh' : '70vh'"
+            class="d-flex align-end"
+          >
+            <template v-slot:placeholder>
+              <v-row class="fill-height ma-0" align="center" justify="center">
+                <v-progress-circular
+                  indeterminate
+                  color="accent"
+                ></v-progress-circular>
+              </v-row>
+            </template>
+          </v-img>
+        </v-card>
+      </v-col>
     </v-row>
 
-    <v-row justify="center">
-      <PageChevron elementId="curriculum" />
+    <v-row justify="center" class="mt-0 mb-10 mb-lg-0">
+      <PageChevron
+        :elementId="$vuetify.breakpoint.smAndDown ? '' : 'curriculum'"
+      />
     </v-row>
 
     <!--DESKTOP-->

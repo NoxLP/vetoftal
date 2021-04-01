@@ -84,23 +84,6 @@ export default {
   data: function () {
     return {
       items: TEXTS_CAROUSEL,
-      /*[
-        {
-          src: require('@/assets/images/placeholder.png'),
-          text: TEXTS_CAROUSEL.who,
-          to: 'who',
-        },
-        {
-          src: require('@/assets/images/carousel/carousel-diseases.jpg'),
-          text: TEXTS_CAROUSEL.diseases,
-          to: 'diseases',
-        },
-        {
-          src: require('@/assets/images/carousel/pet-surgery-1-1241227-1279x1709.jpg'),
-          text: TEXTS_CAROUSEL.services,
-          to: 'services',
-        },
-      ],*/
       carouselHeight: this.$vuetify.breakpoint.smAndDown ? '60vh' : '70vh',
     }
   },
