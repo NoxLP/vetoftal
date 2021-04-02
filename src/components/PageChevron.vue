@@ -1,10 +1,17 @@
 <template>
-  <div class="d-flex justify-center mx-0 mt-sm-12 mb-sm-12">
+  <div :class="up ? '' : 'd-flex justify-center mx-0 mt-sm-12 mb-sm-12'">
     <v-btn
+      ref="btn"
       color="white"
       class="mt-5 mt-lg-0"
       fab
-      small
+      :small="!up ? true : false"
+      :fixed="up ? true : false"
+      :bottom="up ? true : false"
+      :right="up ? true : false"
+      :style="up ? `bottom: ${bottom}px !important` : ''"
+      v-scroll="onScroll"
+      v-show="up ? show : true"
       @click="chevronNavigation"
       elevation="2"
     >
@@ -16,8 +23,15 @@
 
 <script>
 export default {
+  data: function () {
+    return {
+      show: false,
+      bottom: 0,
+    }
+  },
   props: {
     up: Boolean,
+    footerHeight: Number,
     elementId: String,
     idx: Number,
   },
@@ -36,6 +50,22 @@ export default {
         }
       } else
         document.getElementById('app').scrollIntoView({ behavior: 'smooth' })
+    },
+    onScroll: function (e) {
+      if (typeof window === 'undefined' || !this.up) return
+      const top = window.pageYOffset || e.target.scrollTop || 0
+      this.show = top > 50
+
+      const totalScroll =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight
+      const currentScroll = document.documentElement.scrollTop
+      const height = this.$refs.btn.$el.clientHeight
+      const scrollThreshold = totalScroll - this.footerHeight + height
+      const diff = currentScroll - scrollThreshold
+
+      this.bottom =
+        currentScroll > scrollThreshold ? diff + height * 0.5 : height
     },
   },
 }

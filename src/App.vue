@@ -4,7 +4,9 @@
     <v-main>
       <router-view></router-view>
     </v-main>
+    <PageChevron up :footerHeight="footerHeight" />
     <v-footer
+      ref="footer"
       color="primary darken-4"
       class="white--text mt-16 mb-0 pb-9 pt-0 pt-md-6 footer px-0"
     >
@@ -117,11 +119,12 @@
 
 <script>
 import Header from './components/Header'
+import PageChevron from './components/PageChevron'
+
 export default {
   name: 'App',
-  components: { Header },
+  components: { Header, PageChevron },
   data: () => ({
-    footerNav: '',
     tabs: [
       {
         text: 'Portada',
@@ -158,7 +161,12 @@ export default {
         icon: 'mdi-instagram',
       },
     ],
+    footerNav: '',
+    footerHeight: 0,
   }),
+  mounted: function () {
+    this.footerHeight = this.$refs.footer.$el.clientHeight
+  },
 }
 </script>
 <style scoped>

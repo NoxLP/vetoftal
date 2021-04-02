@@ -9,7 +9,7 @@
     >
       <v-row justify="center" align="center">
         <v-card
-          height="100vh"
+          :height="last ? '80vh' : '100vh'"
           class="pa-0 py-16 rounded-0"
           flat
           :color="!inverted ? '#D9FFE32f' : 'transparent'"
@@ -105,12 +105,8 @@
                 </v-img>
               </v-col>
             </v-row>
-            <v-row justify="center" align="end">
-              <PageChevron
-                :up="last"
-                :idx="idx"
-                @chevronClick="onChevronClick"
-              />
+            <v-row justify="center" align="end" v-if="!last">
+              <PageChevron :idx="idx" @chevronClick="onChevronClick" />
             </v-row>
           </v-container>
         </v-card>
