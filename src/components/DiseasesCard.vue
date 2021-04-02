@@ -51,20 +51,18 @@
                 flat
                 tile
                 style="border-top: 1px solid lightgray"
-                class="px-2"
+                class="px-2 mt-3"
                 color="#D9FFE32f"
               >
-                <v-chip-group column class="mt-5">
-                  <v-chip
-                    color="primary"
+                <v-chip-group color="transparent">
+                  <span
+                    style="background-color: #966dd0"
+                    class="rounded-pill px-3 py-2 ml-3 white--text mt-5"
                     v-for="(symptom, idx) in symptoms"
                     :key="idx"
-                    class="pl-1 pr-2 ml-3"
-                    target="_blank"
-                    :href="`https://www.google.com/search?q=síntoma+mascota+${symptom}`"
                   >
                     {{ symptom }}
-                  </v-chip>
+                  </span>
                 </v-chip-group>
               </v-card>
             </v-col>
@@ -86,19 +84,17 @@
                 flat
                 tile
                 style="border-top: 1px solid lightgray"
-                class="px-2"
+                class="px-2 mt-3"
               >
-                <v-chip-group column class="mt-5">
-                  <v-chip
-                    color="primary"
+                <v-chip-group column color="transparent">
+                  <span
+                    style="background-color: #966dd0"
+                    class="rounded-pill px-3 py-2 ml-3 white--text mt-5"
                     v-for="(symptom, idx) in symptoms"
                     :key="idx"
-                    class="pl-1 pr-2 ml-3"
-                    target="_blank"
-                    :href="`https://www.google.com/search?q=síntoma+mascota+${symptom}`"
                   >
                     {{ symptom }}
-                  </v-chip>
+                  </span>
                 </v-chip-group>
               </v-card>
             </v-col>
