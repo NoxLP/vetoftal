@@ -121,8 +121,8 @@
           </v-row>
 
           <!--CHEVRON-->
-          <v-row justify="center" align="end">
-            <PageChevron :up="last" :idx="idx" @chevronClick="onChevronClick" />
+          <v-row justify="center" align="end" v-if="!last">
+            <PageChevron :idx="idx" @chevronClick="onChevronClick" />
           </v-row>
         </v-container>
       </v-card>
@@ -152,4 +152,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

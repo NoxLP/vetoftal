@@ -1,22 +1,32 @@
 <template>
   <div :class="up ? '' : 'd-flex justify-center mx-0 mt-sm-12 mb-sm-12'">
     <v-btn
+      v-if="up"
       ref="btn"
+      color="primary darken-2"
+      class="mt-5 mt-lg-0 mr-sm-8"
+      fab
+      fixed
+      bottom
+      right
+      :style="`bottom: ${bottom}px !important`"
+      v-scroll="onScroll"
+      v-show="show"
+      @click="chevronNavigation"
+      elevation="5"
+    >
+      <v-icon color="white" x-large dark>mdi-chevron-up</v-icon>
+    </v-btn>
+    <v-btn
+      v-else
       color="white"
       class="mt-5 mt-lg-0"
+      small
       fab
-      :small="!up ? true : false"
-      :fixed="up ? true : false"
-      :bottom="up ? true : false"
-      :right="up ? true : false"
-      :style="up ? `bottom: ${bottom}px !important` : ''"
-      v-scroll="onScroll"
-      v-show="up ? show : true"
       @click="chevronNavigation"
       elevation="2"
     >
-      <v-icon color="primary" v-if="!up" x-large dark>mdi-chevron-down</v-icon>
-      <v-icon color="primary" v-else x-large dark>mdi-chevron-up</v-icon>
+      <v-icon color="primary" x-large dark>mdi-chevron-down</v-icon>
     </v-btn>
   </div>
 </template>
@@ -54,7 +64,7 @@ export default {
     onScroll: function (e) {
       if (typeof window === 'undefined' || !this.up) return
       const top = window.pageYOffset || e.target.scrollTop || 0
-      this.show = top > 50
+      this.show = top > 500
 
       const totalScroll =
         document.documentElement.scrollHeight -
@@ -65,7 +75,7 @@ export default {
       const diff = currentScroll - scrollThreshold
 
       this.bottom =
-        currentScroll > scrollThreshold ? diff + height * 0.5 : height * 0.5
+        currentScroll > scrollThreshold ? diff + height * 0.5 : height
     },
   },
 }

@@ -109,10 +109,10 @@
     </v-row>
 
     <DiseasesCard
-      class="mt-0"
       v-else
       v-for="(item, idx) in diseases"
       :key="idx"
+      class="mt-0"
       :title="item.title"
       :textsArray="item.paragraphs"
       :src="item.img"
