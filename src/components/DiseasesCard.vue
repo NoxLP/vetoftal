@@ -60,6 +60,8 @@
                     v-for="(symptom, idx) in symptoms"
                     :key="idx"
                     class="pl-1 pr-2 ml-3"
+                    target="_blank"
+                    :href="`https://www.google.com/search?q=síntoma+mascota+${symptom}`"
                   >
                     {{ symptom }}
                   </v-chip>
@@ -92,6 +94,8 @@
                     v-for="(symptom, idx) in symptoms"
                     :key="idx"
                     class="pl-1 pr-2 ml-3"
+                    target="_blank"
+                    :href="`https://www.google.com/search?q=síntoma+mascota+${symptom}`"
                   >
                     {{ symptom }}
                   </v-chip>

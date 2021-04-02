@@ -91,6 +91,7 @@
                   >
                     <v-chip-group column>
                       <v-chip
+                        label
                         color="primary"
                         v-for="(symptom, idx) in item.symptoms"
                         :key="idx"
