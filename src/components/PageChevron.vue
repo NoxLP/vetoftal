@@ -65,7 +65,7 @@ export default {
       const diff = currentScroll - scrollThreshold
 
       this.bottom =
-        currentScroll > scrollThreshold ? diff + height * 0.5 : height
+        currentScroll > scrollThreshold ? diff + height * 0.5 : height * 0.5
     },
   },
 }
