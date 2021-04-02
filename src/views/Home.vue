@@ -1,5 +1,5 @@
 <template>
-  <div class="home mb-sm-16 mb-lg-0">
+  <div class="mb-sm-16 mb-lg-0">
     <Carousel class="mt-sm-12 mb-sm-12" />
     <PageChevron />
     <BackgroundCard

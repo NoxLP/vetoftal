@@ -52,7 +52,7 @@
     </v-row>
 
     <!--DISEASES MOBILE-->
-    <v-row v-if="$vuetify.breakpoint.smAndDown" justify="center">
+    <!--<v-row v-if="$vuetify.breakpoint.smAndDown" justify="center">
       <v-col>
         <v-card class="mx-1" flat>
           <v-card-text class="pa-0">
@@ -107,10 +107,9 @@
           </v-card-text>
         </v-card>
       </v-col>
-    </v-row>
+    </v-row>-->
 
     <DiseasesCard
-      v-else
       v-for="(item, idx) in diseases"
       :key="idx"
       class="mt-0"
@@ -163,6 +162,5 @@ export default {
 <style scoped>
 .text-shadow {
   text-shadow: black 1px 0 10px !important;
-  /*1px 1px 2px black, 0 0 1em var(--v-accent), 0 0 0.2em var(--v-accent)*/
 }
 </style>

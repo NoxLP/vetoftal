@@ -116,8 +116,8 @@
     <!--MOBILE-->
     <v-container v-else class="mt-8 mt-sm-16" fluid>
       <v-row align="center" class="px-sm-10">
-        <v-col cols="12" md="5" lg="5" class="ml-0 ml-lg-16">
-          <v-card height="100%">
+        <v-col cols="12" class="ml-0">
+          <v-card height="100%" elevation="5">
             <v-img :src="src" max-height="50vh">
               <template v-slot:placeholder>
                 <v-row class="fill-height ma-0" align="center" justify="center">
