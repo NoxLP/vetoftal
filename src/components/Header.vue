@@ -9,7 +9,8 @@
       app
       class="pa-0"
       :src="img"
-      fade-img-on-scroll
+      :fade-img-on-scroll="$vuetify.breakpoint.smAndDown"
+      :min-height="$vuetify.breakpoint.smAndDown ? '50' : ''"
     >
       <template v-slot:img="{ props }">
         <v-img
